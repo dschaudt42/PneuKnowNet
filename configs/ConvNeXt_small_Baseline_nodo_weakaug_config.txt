@@ -1,0 +1,16 @@
+[settings]
+experiment_name = ConvNeXt_small_Baseline_nodo_weakaug
+raw_data_dir = ../../../data/segmentation_test/raw
+roi_data_dir = ../../../data/segmentation_test/roi
+metadata_file = ../../../data/segmentation_test/image_patient_splits.csv
+model_dir = models
+cuda = 1
+repeated_runs = 5
+
+[model]
+resolution = 224
+model_architecture = convnext_small
+dropout_percent = 0.0
+epochs = 60
+augmentations = weak
+batch_size = 8

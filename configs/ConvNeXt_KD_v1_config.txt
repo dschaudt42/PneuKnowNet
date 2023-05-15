@@ -1,0 +1,25 @@
+[settings]
+experiment_name = ConvNeXt_KD_v1
+raw_data_dir = ../../../data/segmentation_test/raw
+roi_data_dir = ../../../data/segmentation_test/roi
+metadata_file = ../../../data/segmentation_test/image_patient_splits.csv
+model_dir = models
+cuda = 1
+repeated_runs = 5
+
+[teacher]
+resolution = 224
+model_architecture = convnext_small
+dropout_percent = 0.5
+epochs = 40
+augmentations = strong
+batch_size = 8
+
+[student]
+resolution = 224
+model_architecture = convnext_small
+dropout_percent = 0.5
+epochs = 110
+augmentations = strong
+kd_epochs = 70
+batch_size = 8
